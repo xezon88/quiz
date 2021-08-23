@@ -9,6 +9,8 @@
 }
 body, html {
   height: 100%
+
+
 }
 img {
   display: block;
@@ -42,7 +44,7 @@ button {
 }
 
 .pass-test__button {
-  max-width: 300px;
+  max-width: 30px;
 }
 
 .overlay {
