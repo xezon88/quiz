@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "liximomo.sftp"
+        "liximomo.sftp",
+        "michelemelluso.code-beautifier"
     ]
 }

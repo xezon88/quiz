@@ -53,7 +53,7 @@ button {
 }
 
 .pass-test__button {
-    max-width: 30px;
+    max-width: 300px;
 }
 
 .overlay {
@@ -106,6 +106,7 @@ button {
     width: 100%;
     background-color: #8a2be2;
     height: 100%;
+    min-height: 95vh;
 }
 
 .quiz-position__on {
@@ -137,10 +138,6 @@ button {
 .form-button {
     display: flex;
 }
-
-.form-button__indent {}
-
-.form-button_btn-prev {}
 
 .button--primary {
     float: right;
@@ -195,19 +192,19 @@ button {
     margin-right: 15px;
 }
 
-.form__input:checked + .form__label-checkbox::before {
+.form__input:checked+.form__label-checkbox::before {
     border: 1px solid #22f805;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
 }
 
-.form__input:checked + .form__label-checkbox::after {
+.form__input:checked+.form__label-checkbox::after {
     content: ' + ';
     position: absolute;
     top: 0;
     left: 0;
 }
 
-.form__column + .form-button__indent {
+.form__column+.form-button__indent {
     position: absolute;
     bottom: 50px;
     width: 100%;
@@ -215,13 +212,9 @@ button {
 
 .form-button_btn-prev {
     float: left;
- 
 }
 
 .form-button_btn-next {
     float: right;
-   
     right: 0;
- 
-    
 }
