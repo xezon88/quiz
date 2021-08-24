@@ -26,7 +26,7 @@
             </div>
             <div class="quiz-body">
                 <form action="#" method="post" class="form quiz-body__form">
-                    <fieldset class="form_fieldset" style="display: block">
+                    <fieldset class="form_fieldset" style="display: none">
                         <div class="form__title"></div>
                         <div class="form__wrap">
                             <label for="label-choise-yes-first">
@@ -40,7 +40,32 @@
                             <button class="form-button_btn-next button--primary">Далее</button>
                         </div>
                     </fieldset>
-                    <fieldset class="form_fieldset" style="display: none">
+                    <fieldset class="form_fieldset" style="display: block">
+                        <div class="form__title">
+                            Kакое количество долга?
+                        </div>
+                        <div class="form__column">
+                            <div class="form__group">
+                                <input type="checkbox" name="user_check_1" id="check_1" class="form__input" value="Менее 200 000р">
+                                <label for="check_1" class="form__label-checkbox">Менее 200 000 рублей</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="checkbox" name="user_check_2" id="check_2" class="form__input" value="от 200 000р">
+                                <label for="check_2" class="form__label-checkbox">От 200 000 рублей</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="checkbox" name="user_check_3" id="check_3" class="form__input" value="от 500 000р">
+                                <label for="check_3" class="form__label-checkbox">От 500 000 рублей</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="checkbox" name="user_check_4" id="check_4" class="form__input" value="От 1 000 000р">
+                                <label for="check_4" class="form__label-checkbox">От 1 000 000 рублей</label>
+                            </div>
+                        </div>
+                        <div class="form-button form-button__indent">
+                            <button class="form-button_btn-prev button--primary">Назад</button>
+                            <button class="form-button_btn-next button--primary">Далее</button>
+                        </div>
                     </fieldset>
                     <fieldset class="form_fieldset" style="display: none">
                     </fieldset>
