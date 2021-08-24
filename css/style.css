@@ -92,3 +92,36 @@ button {
     font-size: 20px;
     font-weight: 900;
 }
+
+.quiz-position {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 316px;
+    width: 100%;
+    min-height: 100%;
+}
+
+.quiz-position__bg {
+    width: 100%;
+    background-color: #8a2be2;
+    height: 100%;
+}
+
+.quiz-position__on {
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px;
+    display: block;
+    padding: 67px 0 20px;
+}
+
+.quiz-position__percent {
+    font-size: 73px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.quiz-position__percent-change {
+    clear: both;
+}
