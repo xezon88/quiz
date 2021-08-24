@@ -206,3 +206,22 @@ button {
     top: 0;
     left: 0;
 }
+
+.form__column + .form-button__indent {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+.form-button_btn-prev {
+    float: left;
+ 
+}
+
+.form-button_btn-next {
+    float: right;
+   
+    right: 0;
+ 
+    
+}

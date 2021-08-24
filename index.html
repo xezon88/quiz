@@ -8,6 +8,10 @@
     <title>Квиз</title>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
 
 </head>
 
@@ -26,14 +30,16 @@
             </div>
             <div class="quiz-body">
                 <form action="#" method="post" class="form quiz-body__form">
-                    <fieldset class="form_fieldset" style="display: none">
+                    <fieldset class="form_fieldset" style="display: block">
                         <div class="form__title"></div>
                         <div class="form__wrap">
+                            <input type="radio" name="label-choise-yes-first" value="Да">
                             <label for="label-choise-yes-first">
-                                <input type="radio" name="" value="Да">
+                               Да
                             </label>
+                            <input type="radio" name="label-choise-no-first" value="Нет"> 
                             <label for="label-choise-no-first">
-                                <input type="radio" name="" value="Нет"> 
+                               Нет
                             </label>
                         </div>
                         <div class="form-button form-button__indent">
@@ -85,7 +91,7 @@
             </div>
         </div>
     </div>
-
+<script src="../js/main.js"></script>
 </body>
 
 </html>
