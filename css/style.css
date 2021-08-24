@@ -159,6 +159,7 @@ button {
 }
 
 .form__group {
+    cursor: pointer;
     border: 1px solid #e5e5e5;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -175,6 +176,7 @@ button {
 }
 
 .form__label-checkbox {
+    cursor: pointer;
     line-height: 22px;
     display: flex;
     align-items: center;
@@ -194,4 +196,11 @@ button {
 .form__input:checked+.form__label-checkbox::before {
     border: 1px solid #22f805;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+}
+
+.form__input:checked+.form__label-checkbox::after {
+    content: ' + ';
+    position: absolute;
+    top: 0;
+    left: 0;
 }
