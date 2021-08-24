@@ -166,7 +166,7 @@ button {
     padding: 14px 10px;
 }
 
-.form__group.active-chekbox {
+.form__group .active-chekbox {
     border: 1px solid #707070;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
 }
@@ -193,12 +193,12 @@ button {
     margin-right: 15px;
 }
 
-.form__input:checked+.form__label-checkbox::before {
+.form__input:checked + .form__label-checkbox::before {
     border: 1px solid #22f805;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
 }
 
-.form__input:checked+.form__label-checkbox::after {
+.form__input:checked + .form__label-checkbox::after {
     content: ' + ';
     position: absolute;
     top: 0;
