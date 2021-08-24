@@ -151,7 +151,9 @@ button {
     color: #fff;
 }
 
-.form-button_btn-next {}
+.form-button_btn-prev {
+    background-color: bisque;
+}
 
 .form__column {
     max-width: 410px;
@@ -166,8 +168,8 @@ button {
     padding: 14px 10px;
 }
 
-.form__group .active-chekbox {
-    border: 1px solid #707070;
+.form__group.active-checkbox {
+    border: 1px solid #31f773;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
 }
 
