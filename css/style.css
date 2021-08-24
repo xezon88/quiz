@@ -153,7 +153,10 @@ button {
 
 .form-button_btn-next {}
 
-.form__column {}
+.form__column {
+    max-width: 410px;
+    padding: 0 40px;
+}
 
 .form__group {
     border: 1px solid #e5e5e5;
@@ -176,4 +179,19 @@ button {
     display: flex;
     align-items: center;
     position: relative;
+}
+
+.form__label-checkbox::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.form__input:checked+.form__label-checkbox::before {
+    border: 1px solid #22f805;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
 }
