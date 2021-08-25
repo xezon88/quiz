@@ -135,31 +135,37 @@
                             <button class="form-button_btn-next button--primary">Далее</button>
                         </div>
                     </fieldset>
-                    <fieldset class="form_fieldset" style="display: none">
-                        <div class="form__title">
-                            Kакое количество долга?
-                        </div>
-                        <div class="form__column">
-                            <div class="form__group active-checkbox">
-                                <input type="checkbox" name="user_check_17" id="check_17" class="form__input" value="Менее 200 000р">
-                                <label for="check_17" class="form__label-checkbox">Менее 200 000 рублей</label>
-                            </div>
-                            <div class="form__group">
-                                <input type="checkbox" name="user_check_18" id="check_18" class="form__input" value="от 200 000р">
-                                <label for="check_18" class="form__label-checkbox">От 200 000 рублей</label>
-                            </div>
-                            <div class="form__group">
-                                <input type="checkbox" name="user_check_19" id="check_19" class="form__input" value="от 500 000р">
-                                <label for="check_19" class="form__label-checkbox">От 500 000 рублей</label>
-                            </div>
-                            <div class="form__group">
-                                <input type="checkbox" name="user_check_20" id="check_20" class="form__input" value="От 1 000 000р">
-                                <label for="check_20" class="form__label-checkbox">От 1 000 000 рублей</label>
+                    <fieldset class="form__fieldset" style="display: none;">
+                        <div class="sending-message">
+                            <div class="sending-message__title">Заполните форму, что бы получить подарок!</div>
+                            <div class="sending-message__wrapper">
+
+                                <input type="hidden" id="discount" value="Cертификат 1000 руб на уборку после ремонта" name="discount">
+
                             </div>
                         </div>
-                        <div class="form-button form-button__indent">
-                            <button class="form-button_btn-prev button--primary">Назад</button>
-                            <button class="form-button_btn-next button--primary">Далее</button>
+                        <div class="quiz-form quiz-form__size">
+                            <div class="quiz-form__block">
+                                <div class="quiz-form__group">
+                                    <label for="quiz-name" class="quiz-form__label">Как к Вам обращаться?</label>
+                                    <input type="text" id="quiz-name" name="user_name" class="input quiz-form__input">
+                                </div>
+                                <div class="quiz-form__group">
+                                    <label for="quiz-phone" class="quiz-form__label">Номер телефона*</label>
+                                    <input type="tel" id="quiz-phone" name="user_phone" class="input quiz-form__input" maxlength="17">
+                                </div>
+                                <div class="quiz-form__group">
+                                    <label for="quiz-email" class="quiz-form__label">Email</label>
+                                    <input type="email" id="quiz-email" name="user_email" class="input quiz-form__input">
+                                </div>
+                                <button type="submit" class="button button__blick quiz-form__button button--primary">Получить
+                                    результаты</button>
+                                <div class="quiz-form__group">
+                                    <input type="checkbox" id="quiz-policy" class="quiz-form__input-policy" checked>
+                                    <label for="quiz-policy" class="quiz-form__label-policy">Даю согласие на обработку
+                                        персональных данных</label>
+                                </div>
+                            </div>
                         </div>
                     </fieldset>
                 </form>

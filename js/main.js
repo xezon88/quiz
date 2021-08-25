@@ -9,7 +9,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const formItems = form.querySelectorAll("fieldset");
     const btnsNext = form.querySelectorAll(".form-button_btn-next");
     const btnsPrev = form.querySelectorAll(".form-button_btn-prev");
-
+    const answersObj = {
+        step0: {
+            question: '',
+            answers: [],
+        },
+        step1: {
+            question: '',
+            answers: [],
+        },
+        step2: {
+            question: '',
+            answers: [],
+        },
+        step3: {
+            question: '',
+            answers: [],
+        },
+        step4: {
+            question: '',
+            answers: [],
+        },
+    };
 
     btnsNext.forEach((btn, i) => {
         btn.addEventListener('click', (event) => {
@@ -33,7 +54,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+
     formItems.forEach((formItem, formItemIndex) => {
+        const itemTitle = formItem.querySelector(".form__title");
+
+
         if (formItemIndex === 0) {
             formItem.style.display = "block";
         } else {
@@ -43,6 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
         formItem.addEventListener('change', (event) => {
             const target = event.target;
             const inputsCheck = formItem.querySelectorAll("input:checked");
+            answersObj[`step${formItemIndex}`].answers.push('cjdsvsd');
+            console.log(answersObj);
 
             if (inputsCheck.length > 0) {
                 btnsNext[formItemIndex].disabled = false;
