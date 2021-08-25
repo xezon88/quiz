@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
 
 
-            formItems[i + 1].style.display = "none";
-            formItems[i].style.display = "block"
+            formItems[i].style.display = "none";
+            formItems[i + 1].style.display = "block"
         });
 
         btn.disabled = true;
@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (input === target) {
                         input.parentNode.classList.toggle("active-checkbox");
                     } else {
-
+                        input.parentNode.classList.remove("active-checkbox");
+                        input.checked = false;
 
                     }
                 });
