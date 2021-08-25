@@ -10,14 +10,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const btnsNext = form.querySelectorAll(".form-button_btn-next");
     const btnsPrev = form.querySelectorAll(".form-button_btn-prev");
 
-    btnsNext.forEach((btn, btnIndex) => {
+
+    btnsNext.forEach((btn, i) => {
         btn.addEventListener('click', (event) => {
             event.preventDefault();
 
 
-            formItems[btnIndex].style.display = "none";
-            formItems[btnIndex + 1].style.display = "block";
+            formItems[i + 1].style.display = "none";
+            formItems[i].style.display = "block"
         });
+
+        btn.disabled = true;
     });
 
     btnsPrev.forEach((btn, btnIndex) => {
@@ -39,6 +42,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         formItem.addEventListener('change', (event) => {
             const target = event.target;
+            const inputsCheck = formItem.querySelectorAll("input:checked");
+
+            if (inputsCheck.length > 0) {
+                btnsNext[formItemIndex].disabled = false;
+            } else {
+                btnsNext[formItemIndex].disabled = true;
+            }
 
 
             if (target.classList.contains("form__input")) {
@@ -48,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (input === target) {
                         input.parentNode.classList.toggle("active-checkbox");
                     } else {
-                        input.parentNode.classList.remove("active-checkbox");
-                        input.checked = false;
+
+
                     }
                 });
             } else {
