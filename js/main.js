@@ -70,44 +70,46 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             formItem.style.display = "none";
         }
-
-        formItem.addEventListener('change', (event) => {
-            const target = event.target;
-            const inputsChecked = formItem.querySelectorAll("input:checked");
-
-
-            inputsChecked.forEach((inputChecked, indexInputCheked) => {
-                answersObj[`step${formItemIndex}`].answers.length = 0;
-                answersObj[`step${formItemIndex}`].answers.push(inputChecked.value);
-            });
+        if (formItemIndex !== formItems.length - 1) {
+            formItem.addEventListener('change', (event) => {
+                const target = event.target;
+                const inputsChecked = formItem.querySelectorAll("input:checked");
 
 
-
-
-
-            if (inputsChecked.length > 0) {
-                btnsNext[formItemIndex].disabled = false;
-            } else {
-                btnsNext[formItemIndex].disabled = true;
-            }
-
-
-            if (target.classList.contains("form__input")) {
-                const inputs = formItem.querySelectorAll(".form__input");
-
-                inputs.forEach((input) => {
-                    if (input === target) {
-                        input.parentNode.classList.toggle("active-checkbox");
-                    } else {
-                        input.parentNode.classList.remove("active-checkbox");
-                        input.checked = false;
-
-                    }
+                inputsChecked.forEach((inputChecked, indexInputCheked) => {
+                    answersObj[`step${formItemIndex}`].answers.length = 0;
+                    answersObj[`step${formItemIndex}`].answers.push(inputChecked.value);
                 });
-            } else {
-                return;
-            }
-        });
+
+
+
+
+
+                if (inputsChecked.length > 0) {
+                    btnsNext[formItemIndex].disabled = false;
+                } else {
+                    btnsNext[formItemIndex].disabled = true;
+                }
+
+
+                if (target.classList.contains("form__input")) {
+                    const inputs = formItem.querySelectorAll(".form__input");
+
+                    inputs.forEach((input) => {
+                        if (input === target) {
+                            input.parentNode.classList.toggle("active-checkbox");
+                        } else {
+                            input.parentNode.classList.remove("active-checkbox");
+                            input.checked = false;
+
+                        }
+                    });
+                } else {
+                    return;
+                }
+            });
+        }
+
     });
 
     inputs.forEach((input) => {
