@@ -11,26 +11,32 @@ document.addEventListener("DOMContentLoaded", function() {
     const btnsPrev = form.querySelectorAll(".form-button_btn-prev");
     const answersObj = {
         step0: {
-            question: '',
+            question: "",
             answers: [],
         },
         step1: {
-            question: '',
+            question: "",
             answers: [],
         },
         step2: {
-            question: '',
+            question: "",
             answers: [],
         },
         step3: {
-            question: '',
+            question: "",
             answers: [],
         },
         step4: {
-            question: '',
+            question: "",
             answers: [],
         },
+        step5: {
+            name: "",
+            phone: "",
+            email: "",
+        },
     };
+
 
     btnsNext.forEach((btn, i) => {
         btn.addEventListener('click', (event) => {
@@ -67,11 +73,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
         formItem.addEventListener('change', (event) => {
             const target = event.target;
-            const inputsCheck = formItem.querySelectorAll("input:checked");
-            answersObj[`step${formItemIndex}`].answers.push('cjdsvsd');
-            console.log(answersObj);
+            const inputsChecked = formItem.querySelectorAll("input:checked");
 
-            if (inputsCheck.length > 0) {
+
+            inputsChecked.forEach((inputChecked, indexInputCheked) => {
+                answersObj[`step${formItemIndex}`].answers.length = 0;
+                answersObj[`step${formItemIndex}`].answers.push(inputChecked.value);
+            });
+
+
+
+
+
+            if (inputsChecked.length > 0) {
                 btnsNext[formItemIndex].disabled = false;
             } else {
                 btnsNext[formItemIndex].disabled = true;
@@ -99,16 +113,54 @@ document.addEventListener("DOMContentLoaded", function() {
     inputs.forEach((input) => {
         const parent = input.parentNode;
         input.checked = false;
-        parent.classList.remove("active-radio");
         parent.classList.remove("active-checkbox");
     })
 
-    overlay.style.display = "none";
-    quiz.style.display = "none";
+    const sendForm = () => {
+        const lastFieldset = formItems[formItems.length - 1]
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+
+            answersObj.step5.name = document.getElementById("quiz-name").value;
+            answersObj.step5.phone = document.getElementById("quiz-phone").value;
+            answersObj.step5.email = document.getElementById("quiz-email").value;
+
+
+            if (document.getElementById("quiz-policy").checked === true) {
+                postData(answersObj).then((res) => {
+                    if (res[status] === 'ok') {
+                        overlay.style.display = "none";
+                        quiz.style.display = "none";
+                        alert(res["message"]);
+                    } else if (res[status] === 'error') {
+                        alert(res["message"]);
+                    }
+                });
+            } else {
+                alert('Дайте согласие на обработку персональных данных')
+            }
+
+
+        });
+    };
+
+    const postData = (body) => {
+        return fetch("./server.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "applications/json",
+            },
+            body: JSON.stringify(body),
+        });
+    };
+
+
 
     passTestButton.addEventListener('click', () => {
         overlay.style.display = "block";
         quiz.style.display = "block";
     })
-
+    sendForm();
 });
