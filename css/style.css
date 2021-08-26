@@ -102,6 +102,12 @@ button {
     font-weight: 900;
 }
 
+.quiz-head img {
+    width: 100%;
+    max-width: 200px;
+    margin-right: 20px;
+}
+
 .quiz-position {
     position: absolute;
     top: 0;
@@ -236,3 +242,39 @@ button {
 .form-button_btn-next {
     float: right;
 }
+
+.sending-message {
+    padding: 20px 40px;
+}
+
+.sending-message__title {}
+
+.sending-message__wrapper {}
+
+.quiz-form {
+    padding-left: 40px;
+}
+
+.quiz-form__size {}
+
+.quiz-form__block {}
+
+.quiz-form__group {}
+
+.quiz-form__label {}
+
+.input {}
+
+.quiz-form__input {}
+
+.button {}
+
+.button__blick {}
+
+.quiz-form__button {}
+
+.button--primary {}
+
+.quiz-form__input-policy {}
+
+.quiz-form__label-policy {}
