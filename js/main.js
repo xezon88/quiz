@@ -115,35 +115,42 @@ document.addEventListener("DOMContentLoaded", function() {
         const parent = input.parentNode;
         input.checked = false;
         parent.classList.remove("active-checkbox");
-    })
+    });
 
     const sendForm = () => {
-        const lastFieldset = formItems[formItems.length - 1]
-
-        form.addEventListener('submit', (event) => {
+        form.addEventListener("submit", (event) => {
             event.preventDefault();
-
 
             answersObj.step5.name = document.getElementById("quiz-name").value;
             answersObj.step5.phone = document.getElementById("quiz-phone").value;
             answersObj.step5.email = document.getElementById("quiz-email").value;
 
 
-            if (document.getElementById("quiz-policy").checked === true) {
-                postData(answersObj).then((res) => {
-                    if (res[status] === 'ok') {
-                        overlay.style.display = "none";
-                        quiz.style.display = "none";
-                        alert(res["message"]);
-                    } else if (res[status] === 'error') {
-                        alert(res["message"]);
-                    }
-                });
+            // for (let key in answersObj.step5) {
+            //     console.log(key);
+            //     if (answersObj.step5[key] === "") {
+            //         console.log(answersObj.step5[key]);
+            //         alert("Введите даные во все поля");
+            //         return false;
+            //     }
+            // }
+
+            if (document.getElementById("quiz-policy").checked) {
+                postData(answersObj)
+                    .then((res) => res.json())
+                    .then((res) => {
+                        if (res["status"] === "ok") {
+
+                            form.reset();
+                            alert(res["message"]);
+                        } else if (res["status"] === "error") {
+                            alert(res["message"]);
+
+                        }
+                    });
             } else {
-                alert('Дайте согласие на обработку персональных данных')
+                alert("Дайте согласие на обработку персональных данных");
             }
-
-
         });
     };
 
@@ -151,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return fetch("./server.php", {
             method: "POST",
             headers: {
-                "Content-Type": "applications/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(body),
         });
@@ -162,6 +169,23 @@ document.addEventListener("DOMContentLoaded", function() {
     passTestButton.addEventListener('click', () => {
         overlay.style.display = "block";
         quiz.style.display = "block";
-    })
+    });
     sendForm();
+
+    function progress() {
+        let elem = document.getElementById('progress__line'),
+            width = 20,
+            id = setInterval(progressStatus, 1000);
+
+        function progressStatus() {
+            if (width >= 100) {
+                clearInterval(id);
+            } else {
+                width++;
+                elem.style.width = width + '%';
+                elem.innerHTML = width * 1 + '%';
+            }
+        }
+    }
+    progress();
 });

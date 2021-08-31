@@ -186,7 +186,8 @@ body {
     background-color: #fff;
     max-width: 1300px;
     width: 100%;
-    min-height: 95%;
+    height: 100%;
+    max-height: 95%;
     z-index: 40;
     overflow: auto;
     transform: translate(-50%, -50%);
@@ -431,4 +432,32 @@ body {
 
 .quiz-form__label-policy {
     margin: 10px 0px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+}
+
+.progress__line-bg {
+    background-color: #ccc;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress__line {
+    background-color: #2fc54d;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
 }
