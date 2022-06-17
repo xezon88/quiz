@@ -1,7 +1,0 @@
-{
-    "remote.SSH.enableAzureIntegration": true,
-    "remote.SSH.remoteServerListenOnSocket": true,
-    "sftp.debug": true,
-    "sftp.downloadWhenOpenInRemoteExplorer": true,
-    "sftp.printDebugLog": true
-}
